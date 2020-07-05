@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Manipulator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+
+    <!-- Tab links -->
+    <div class="tab">
+      <button
+        class="tablinks"
+        onclick="features(event, 'ftabs')"
+        id="defaultOpen"
+      >
+        Filters
+      </button>
+      <button class="tablinks" onclick="features(event, 'gstabs')">
+        Green Screen
+      </button>
+    </div>
+
+    <!-- Tab content -->
+
+    <!--Filters-->
+    <div id="ftabs" class="tabcontent">
+      <h1>Image Filters</h1>
+      <hr color="grey" />
+      <h2>Add filters to your Image</h2>
+      <canvas class="displayFilters" id="display" class="center"> </canvas>
+
+      <!--Upload-->
+      <div>
+        <h3>Image</h3>
+        <p id="imgDetails"></p>
+
+        <input class="button" type="file" id="upload" accept=images/*
+        multiple="false" onchange="upload()">
+
+        <input
+          id="imgDetails"
+          class="button"
+          type="button"
+          value="Image Size"
+          onclick="displayDetails()"
+        />
+      </div>
+
+      <div>
+        <label for="filter-select">Choose a filter: </label>
+        <select class="button" id="filter" onchange="showHide(this)">
+          <option value="">Choose any Filter</option>
+          <option value="grayscale">Grayscale</option>
+          <option value="sepia">Sepia</option>
+          <option value="rainbow">Rainbow</option>
+          <option value="red">Red</option>
+          <option value="blur">Blur</option>
+          <option value="windowPane">Window Pane</option>
+          <option value="colorize">Colorize</option>
+        </select>
+        <input class="button" type="color" value="#0000FF" id="colorPicked" />
+      </div>
+
+      <p>
+        <input
+          type="button"
+          class="mainButton"
+          id="compose"
+          value="Compose"
+          onclick="filterSelect()"
+        />
+
+        <input
+          type="button"
+          class="mainButton"
+          id="reset"
+          value="Reset"
+          onclick="resetImg()"
+        />
+      </p>
+    </div>
+
+    <!--Green Screen-->
+    <div id="gstabs" class="tabcontent">
+      <h1>Green Screen</h1>
+      <hr color="grey" />
+      <h2>Compose Green Screen Images</h2>
+      <canvas class="displayGS" id="fgcan"> </canvas>
+      <canvas class="displayGS" id="bgcan"> </canvas>
+
+      <p>
+        Foreground:
+        <input
+          class="button"
+          type="file"
+          multiple="false"
+          accept="image/*"
+          id="fgfile"
+          onchange="loadForegroundImage()"
+        />
+      </p>
+
+      <p>
+        Background:
+        <input
+          class="button"
+          type="file"
+          multiple="false"
+          accept="image/*"
+          id="bgfile"
+          onchange="loadBackgroundImage()"
+        />
+      </p>
+
+      <p>
+        <input
+          class="mainButton"
+          type="button"
+          value="Compose"
+          onclick="doGreenScreen()"
+        />
+        <input
+          class="mainButton"
+          type="button"
+          value="Clear"
+          onclick="clearCanvas()"
+        />
+      </p>
+      <br />
+      <br />
+    </div>
+
+    <hr color="grey" />
+
+    <div class="bottom-container">
+      <a
+        class="footer-link"
+        href="https://jashnimje.wordpress.com/"
+        target="_blank"
+        >Website</a
+      >
+      <a
+        class="footer-link"
+        href="https://www.instagram.com/jashnimje/"
+        target="_blank"
+        >Instagram</a
+      >
+      <a class="footer-link" href="https://github.com/jashnimje" target="_blank"
+        >GitHub</a
+      >
+      <a
+        class="footer-link"
+        href="https://twitter.com/jashnimje"
+        target="_blank"
+        >Twitter</a
+      >
+      <a
+        class="footer-link"
+        href="https://www.linkedin.com/in/jashnimje"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <p class="footer">Made with ❤</p>
+      <p class="footer" class="copyright">© 2020 Jash Nimje.</p>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./script.js"></script>
+  </body>
+</html>
