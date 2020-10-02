@@ -16,179 +16,127 @@
       gtag("config", "UA-139414702-2");
     </script>
 
+    <!--Meta Tags-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta
+      name="Image Manipulator, Editing Tool"
+      content="An Ultimate tool for all editing needs."
+    />
     <title>Image Manipulator</title>
-    <link rel="stylesheet" href="./style.css" />
+
+    <!--Links-->
+    <link rel="icon" href="/assets/fevicon.ico" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="images/panda_fevicon.ico" />
   </head>
+
   <body>
-    <!-- partial:index.partial.html -->
+    <!--Package Import-->
     <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
 
-    <!-- Tab links -->
-    <div class="tab">
-      <button
-        class="tablinks"
-        onclick="features(event, 'ftabs')"
-        id="defaultOpen"
-      >
-        Filters
-      </button>
-      <button class="tablinks" onclick="features(event, 'gstabs')">
-        Green Screen
-      </button>
-    </div>
-
-    <!-- Tab content -->
-
-    <!--Filters-->
-    <div id="ftabs" class="tabcontent">
-      <h1>Image Filters</h1>
-      <hr color="grey" />
-      <h2>Add filters to your Image</h2>
-      <canvas class="displayFilters" id="display" class="center"> </canvas>
-
-      <!--Upload-->
-      <div>
-        <h3>Image</h3>
-        <p id="imgDetails"></p>
-
-        <input class="button" type="file" id="upload" accept=images/*
-        multiple="false" onchange="upload()">
-
-        <input
-          id="imgDetails"
-          class="button"
-          type="button"
-          value="Image Size"
-          onclick="displayDetails()"
-        />
+    <!--Navigation Bar-->
+    <nav>
+      <div class="burger">
+        <i class="fas fa-bars" onclick="openNav()"></i>
       </div>
 
-      <div>
-        <label for="filter-select">Choose a filter: </label>
-        <select class="button" id="filter" onchange="showHide(this)">
-          <option value="">Choose any Filter</option>
-          <option value="grayscale">Grayscale</option>
-          <option value="sepia">Sepia</option>
-          <option value="rainbow">Rainbow</option>
-          <option value="red">Red</option>
-          <option value="blur">Blur</option>
-          <option value="windowPane">Window Pane</option>
-          <option value="colorize">Colorize</option>
-        </select>
-        <input class="button" type="color" value="#0000FF" id="colorPicked" />
+      <h1 class="logo">Image Manipulator</h1>
+
+      <div id="navbar" class="navbar">
+        <i
+          class="fas fa-times closebtn"
+          href="javascript:void(0)"
+          onclick="closeNav()"
+        ></i>
+        <ul>
+          <li><a href="./index.html" class="active">Home</a></li>
+          <li><a href="./filters.html">Filters</a></li>
+          <li><a href="./greenScreen.html">Green Screen</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
       </div>
+    </nav>
 
-      <p>
-        <input
-          type="button"
-          class="mainButton"
-          id="compose"
-          value="Compose"
-          onclick="filterSelect()"
-        />
+    <div class="main-container">
+      <h2>Welcome to Image Manipulator</h2>
+      <p>This website is a tool to manipulate or edit your images on the go.</p>
 
-        <input
-          type="button"
-          class="mainButton"
-          id="reset"
-          value="Reset"
-          onclick="resetImg()"
-        />
-      </p>
+      <h2>Guide</h2>
+      <div class="guide grid">
+        <div class="guide-filter">
+          <h3>Filters</h3>
+          <ul>
+            <li>Upload your Image</li>
+            <li>Choose any filter from the list</li>
+            <li>Click on Compose</li>
+            <li>To download right-click and "save as image"</li>
+            <li>To reset click on Reset</li>
+          </ul>
+        </div>
+
+        <div class="guide-greenScreen">
+          <h3>Green Screen</h3>
+          <ul>
+            <li>Upload your Foreground Image</li>
+            <li>Upload your Background Image</li>
+            <li>Click on Compose</li>
+            <li>To download right-click and "save as image"</li>
+            <li>To reset click on Reset</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <!--Green Screen-->
-    <div id="gstabs" class="tabcontent">
-      <h1>Green Screen</h1>
-      <hr color="grey" />
-      <h2>Compose Green Screen Images</h2>
-      <canvas class="displayGS" id="fgcan"> </canvas>
-      <canvas class="displayGS" id="bgcan"> </canvas>
+    <!--Footer-->
+    <footer>
+      <p class="copyright">&copy 2020 <strong>Jash Nimje</strong></p>
+      <ul class="social">
+        <li>
+          <a
+            class="fab fa-wordpress"
+            href="https://jashnimje.wordpress.com/"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-github"
+            href="https://github.com/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
 
-      <p>
-        Foreground:
-        <input
-          class="button"
-          type="file"
-          multiple="false"
-          accept="image/*"
-          id="fgfile"
-          onchange="loadForegroundImage()"
-        />
-      </p>
-
-      <p>
-        Background:
-        <input
-          class="button"
-          type="file"
-          multiple="false"
-          accept="image/*"
-          id="bgfile"
-          onchange="loadBackgroundImage()"
-        />
-      </p>
-
-      <p>
-        <input
-          class="mainButton"
-          type="button"
-          value="Compose"
-          onclick="doGreenScreen()"
-        />
-        <input
-          class="mainButton"
-          type="button"
-          value="Clear"
-          onclick="clearCanvas()"
-        />
-      </p>
-      <br />
-      <br />
-    </div>
-
-    <hr color="grey" />
-
-    <div class="bottom-container">
-      <a
-        class="footer-link"
-        href="https://jashnimje.wordpress.com/"
-        target="_blank"
-        >Website</a
-      >
-      <a
-        class="footer-link"
-        href="https://www.instagram.com/jashnimje/"
-        target="_blank"
-        >Instagram</a
-      >
-      <a class="footer-link" href="https://github.com/jashnimje" target="_blank"
-        >GitHub</a
-      >
-      <a
-        class="footer-link"
-        href="https://twitter.com/jashnimje"
-        target="_blank"
-        >Twitter</a
-      >
-      <a
-        class="footer-link"
-        href="https://www.linkedin.com/in/jashnimje"
-        target="_blank"
-        >LinkedIn</a
-      >
-      <p class="footer">Made with ❤</p>
-      <p class="footer" class="copyright">© 2020 Jash Nimje.</p>
-    </div>
+        <li>
+          <a
+            class="fab fa-linkedin"
+            href="https://www.linkedin.com/in/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-instagram"
+            href="https://www.instagram.com/jashnimje/"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-twitter"
+            href="https://twitter.com/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
+      </ul>
+    </footer>
 
     <!-- Javascript -->
-    <script src="./script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

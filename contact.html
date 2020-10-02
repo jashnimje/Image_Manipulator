@@ -1,0 +1,110 @@
+<html lang="en">
+  <head>
+    <!--Meta Tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta
+      name="Image Manipulator, Editing Tool"
+      content="An Ultimate tool for all editing needs."
+    />
+    <title>Image Manipulator | Contact</title>
+
+    <!--Links-->
+    <link rel="icon" href="/assets/fevicon.ico" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--Navigation Bar-->
+    <nav>
+      <div class="burger">
+        <i class="fas fa-bars" onclick="openNav()"></i>
+      </div>
+
+      <h1 class="logo">Image Manipulator</h1>
+
+      <div id="navbar" class="navbar">
+        <i
+          class="fas fa-times closebtn"
+          href="javascript:void(0)"
+          onclick="closeNav()"
+        ></i>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./filters.html">Filters</a></li>
+          <li><a href="./greenScreen.html">Green Screen</a></li>
+          <li><a href="./contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Contact page-->
+    <section id="contact">
+      <h3>Get In Touch</h3>
+      <p>Feedback Form</p>
+      <form
+        class="contact-form"
+        action="mailto:jashnimje@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <input type="text" placeholder="NAME" />
+        <input type="email" placeholder="EMAIL" />
+        <textarea placeholder="YOUR MESSAGE"></textarea>
+        <button class="button">Send Message</button>
+      </form>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <p class="copyright">&copy 2020 <strong>Jash Nimje</strong></p>
+      <ul class="social">
+        <li>
+          <a
+            class="fab fa-wordpress"
+            href="https://jashnimje.wordpress.com/"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-github"
+            href="https://github.com/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
+
+        <li>
+          <a
+            class="fab fa-linkedin"
+            href="https://www.linkedin.com/in/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-instagram"
+            href="https://www.instagram.com/jashnimje/"
+            target="_blank"
+          ></a>
+        </li>
+        <li>
+          <a
+            class="fab fa-twitter"
+            href="https://twitter.com/jashnimje"
+            target="_blank"
+          ></a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
