@@ -175,6 +175,7 @@ nav {
   font-size: 3rem;
   cursor: pointer;
   margin: 1rem;
+  float: left;
 }
 
 .logo {
